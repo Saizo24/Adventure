@@ -1,0 +1,15 @@
+The Warrior Class
+
+The warrior is the strongest class and a master of all melee combat. With his heavy armor, he can take on
+every hit. He relies on his strength to overwhelm his foes.
+
+Starting Attributes:
+Strength: 8
+Dexterity: 3
+Intelligenz: 0
+
+Health Points: 30
+Mana Points: 0
+
+Wearable:
+Light, medium, heavy armor and shields

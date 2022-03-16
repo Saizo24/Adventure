@@ -1,0 +1,9 @@
+Adventure - Guide
+Adventure is a text-based roleplaying game where you can create your own character
+to explore the world.
+
+How to navigate through the world
+You can't move freely through the world but you can choose the direction of the story.
+If you get to crossroad, you can choose your action by entering the corresponing number.
+
+ 

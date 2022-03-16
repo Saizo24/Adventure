@@ -1,0 +1,17 @@
+The Ranger Class
+
+Although not so strong in close combat, the ranger is the undisputed master of the bow. Though
+they need lighter armor, so it doesn't interfere with the movement of the ranger. 
+
+The ranger can dish out two attacks per Round.
+
+Starting Attributes:
+Strength: 3
+Dexterity: 10
+Intelligenz: 0
+
+Health Points: 30
+Mana Points: 0
+
+Wearable:
+Light, medium armor and shields

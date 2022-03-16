@@ -1,0 +1,18 @@
+The Warrior Class
+
+The Wizard has devoted his life to his studies on arcane magic. His knowledge on spells
+are diverse and unsurpassed. He uses his magical energy called mana to fuel his spells.
+
+A Wizard generates a Shield each combat to protect himself at the cost of a bit of Mana.
+
+Starting Attributes:
+Strength: 0
+Dexterity: 3
+Intelligenz: 10
+
+Shield Points: 30
+Health Points: 20
+Mana Points: 30
+
+Wearable:
+Light Armor
