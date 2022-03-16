@@ -21,9 +21,9 @@ public class Bow extends Weapon {
   }
 
   @Override
-  public boolean equipMainHand(PlayerCharacter player) {
-    player.eq.unequipOffHand();
-    return super.equipMainHand(player);
+  public boolean equipMainHand(PlayerCharacter playerCharacter) {
+    playerCharacter.unequipOffHand();
+    return super.equipMainHand(playerCharacter);
   }
 
   private boolean checkForArrows(PlayerCharacter playerCharacter) {

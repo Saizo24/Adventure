@@ -29,10 +29,10 @@ public class Quiver implements EquippableOffHand {
   }
 
   @Override
-  public boolean equipOffHand(PlayerCharacter player, Equipment equipment) {
-    if (equipment.getMainHand() instanceof Bow) {
-      equipment.setOffHand(this);
-      player.getInventory().remove(this);
+  public boolean equipOffHand(PlayerCharacter playerCharacter) {
+    if (playerCharacter.getMainHand() instanceof Bow) {
+      playerCharacter.setOffHand(this);
+      playerCharacter.getInventory().remove(this);
       System.out.printf("You equip the quiver. It has %d arrows left.", arrowCount);
       return true;
     } else {

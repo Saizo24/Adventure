@@ -19,6 +19,6 @@ public abstract interface UsableItem {
 
   public abstract String getNAME();
   public abstract int getMAGIC_LEVEL();
-  public abstract boolean use(PlayerCharacter player);
+  public abstract boolean use(PlayerCharacter playerCharacter);
   public abstract void showDescription();
 }

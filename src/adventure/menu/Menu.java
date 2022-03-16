@@ -3,7 +3,6 @@ package adventure.menu;
 import adventure.combat.Enemy;
 import adventure.interfaces.EquippableMainHand;
 import adventure.interfaces.EquippableOffHand;
-import adventure.items.Equipment;
 import adventure.player.PlayerCharacter;
 
 import java.util.ArrayList;
@@ -121,24 +120,23 @@ public class Menu {
   }
 
   private static void showPlayerEquipment(PlayerCharacter player) {
-    Equipment equipment = player.getEquipment();
     System.out.println("\n--- Equipment ---");
-    showMainHand(equipment);
-    showOffHand(equipment);
-    showArmor(equipment);
+    showMainHand(player);
+    showOffHand(player);
+    showArmor(player);
     System.out.println("---");
   }
 
-  private static void showMainHand(Equipment equipment) {
-    EquippableMainHand mainHand =  equipment.getMainHand();
-    int weaponStat = equipment.getPlayer().getAttributes()[mainHand == null ? 0 : mainHand.getATTR_INDEX()];
+  private static void showMainHand(PlayerCharacter player) {
+    EquippableMainHand mainHand =  player.getMainHand();
+    int weaponStat = player.getAttributes()[mainHand == null ? 0 : mainHand.getATTR_INDEX()];
     System.out.printf("Main Hand: %s\n", mainHand == null ? "Empty" : mainHand.getNAME());
     System.out.printf("Damage: 1%s +%d\n", mainHand == null ? "" : "-" + mainHand.getDAMAGE(), weaponStat);
-    System.out.println("Atk. Bonus: +" + equipment.getPlayer().getAttributes()[mainHand == null ? 0 : mainHand.getATTR_INDEX()] + "\n");
+    System.out.println("Atk. Bonus: +" + player.getAttributes()[mainHand == null ? 0 : mainHand.getATTR_INDEX()] + "\n");
   }
 
-  private static void showOffHand(Equipment equipment) {
-    EquippableOffHand offHand = equipment.getOffHand();
+  private static void showOffHand(PlayerCharacter player) {
+    EquippableOffHand offHand = player.getOffHand();
     if (offHand == null) {
       System.out.println("Off Hand : Empty");
     } else {
@@ -147,12 +145,12 @@ public class Menu {
     }
   }
 
-  private static void showArmor(Equipment equipment) {
-    if (equipment.getArmor() == null) {
+  private static void showArmor(PlayerCharacter player) {
+    if (player.getArmor() == null) {
       System.out.println("Armor: Empty");
     } else {
-      System.out.println("Armor: " + equipment.getArmor().getNAME());
-      equipment.getArmor().showStats();
+      System.out.println("Armor: " + player.getArmor().getNAME());
+      player.getArmor().showStats();
     }
   }
 

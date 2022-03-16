@@ -24,17 +24,19 @@ public class PlayerCharacter {
   protected int experiencePoints = 0;
   protected int level = 1;
 
-  protected Equipment equipment = new Equipment(this);
-  protected ArrayList<UsableItem> inventory = new ArrayList<>();
-  protected int goldCoins = 0;
+  private EquippableMainHand mainHand = null;
+  private EquippableOffHand offHand = null;
+  private Armor armor = null;
+  private ArrayList<UsableItem> inventory = new ArrayList<>();
+  private int goldCoins = 0;
 
-  protected int[] attributes = new int[3];
+  private int[] attributes = new int[3];
 
-  protected int age;
+  private int age;
 
-  protected int maxArmorType;
-  protected int healthPoints = 0;
-  protected int maxHealthPoints = 0;
+  private int maxArmorType;
+  private int healthPoints = 0;
+  private int maxHealthPoints = 0;
 
   public PlayerCharacter(String NAME, String RACE, String GENDER, int CLASS_INDEX) {
     this.NAME = NAME;
@@ -71,8 +73,28 @@ public class PlayerCharacter {
     this.level = level;
   }
 
-  public Equipment getEquipment() {
-    return equipment;
+  public EquippableMainHand getMainHand() {
+    return mainHand;
+  }
+
+  public void setMainHand(EquippableMainHand equippableMainHand) {
+    this.mainHand = equippableMainHand;
+  }
+
+  public EquippableOffHand getOffHand() {
+    return offHand;
+  }
+
+  public void setOffHand(EquippableOffHand offHand) {
+    this.offHand = offHand;
+  }
+
+  public Armor getArmor() {
+    return armor;
+  }
+
+  public void setArmor(Armor armor) {
+    this.armor = armor;
   }
 
   public ArrayList getInventory() {
@@ -236,12 +258,37 @@ public class PlayerCharacter {
   }
 
   public int calculateArmorClass() {
-    int armorClass = 10 + attributes[1] / 2 + (equipment.getArmor() != null ? equipment.getArmor().getARMOR_BONUS() : 0) + (equipment.getOffHand() instanceof Shield ? ((Shield) equipment.getOffHand()).getARMOR_BONUS() : 0);
+    int armorClass = 10 + attributes[1] / 2 + (armor != null ? armor.getARMOR_BONUS() : 0) + (offHand instanceof Shield ? ((Shield) offHand).getARMOR_BONUS() : 0);
+
     return armorClass;
   }
 
   public void addGoldCoins(int amount) {
     goldCoins += amount;
+  }
+
+  public void unequipMainHand() {
+    if (mainHand != null) {
+      System.out.println(mainHand.getNAME() + " is going back into your bag.");
+      inventory.add((UsableItem) mainHand);
+      mainHand = null;
+    }
+  }
+
+  public void unequipOffHand() {
+    if (offHand != null) {
+      System.out.println(offHand.getNAME() + " is going back into your bag.");
+      inventory.add((UsableItem) offHand);
+      offHand = null;
+    }
+  }
+
+  public void unequipArmor() {
+    if (offHand != null) {
+      System.out.println(armor.getNAME() + " is going back into your bag.");
+      inventory.add(armor);
+      armor = null;
+    }
   }
 
   public void addExperience(int amount) {
