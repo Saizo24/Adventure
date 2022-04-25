@@ -5,6 +5,8 @@ import adventure.interfaces.UsableItem;
 import adventure.menu.Menu;
 import adventure.player.PlayerCharacter;
 import adventure.scenery.Room;
+
+import java.util.ArrayList;
 import java.util.Random;
 
 public class RandomDungeon extends Campaign {
@@ -13,17 +15,18 @@ public class RandomDungeon extends Campaign {
   public static final int DUNGEON_BASE_HEIGHT = 6;
 
   public final String[] DEFAULT_OPTIONS = {
-      "Search this room.",
-      "Look for any Doors.",
-      "Show Status",
-      "Open Inventory",
-      "Go back",
-      "Exit the dungeon"
+    "Search this room.",
+    "Look for any Doors.",
+    "Show Status",
+    "Open Inventory",
+    "Show Map",
+    "Go back",
+    "Exit the dungeon"
   };
 
   public final String[] EXIT_OPTIONS = {
-      "Go deeper",
-      "Keep exploring"
+    "Go deeper",
+    "Keep exploring"
   };
 
   private int startRoomNumber;
@@ -60,8 +63,9 @@ public class RandomDungeon extends Campaign {
           player.openInventory();
           Menu.pressEnter();
         }
-        case 4 -> goBack();
-        case 5 -> exiting = true;
+        case 4 -> showMap();
+        case 5 -> goBack();
+        case 6 -> exiting = true;
         default -> System.out.println(Menu.INPUT_INVALID);
       }
     } while (!exiting);
@@ -109,8 +113,8 @@ public class RandomDungeon extends Campaign {
       switch (action) {
         case 0 -> {
           System.out.println("As you walk down the stairs, you feel a little tingle.\n" +
-              "You feel the dungeon shift and reform. Suddenly, you can see the daylight behind you.\n" +
-              "You are standing at the entrance.");
+            "You feel the dungeon shift and reform. Suddenly, you can see the daylight behind you.\n" +
+            "You are standing at the entrance.");
           createRandomDungeon(currentLevel + 1);
         }
         case 1 -> System.out.println("You move away from the stairway. There is still much to explore here.");
@@ -146,6 +150,19 @@ public class RandomDungeon extends Campaign {
     }
     Menu.pressEnter();
   }
+
+  private void showMap() {
+    for (int i = 0; i < layout.length; i++) {
+      for (int j = 0; j < layout[i].length; j++) {
+        if (layout[i][j] == 1 && searchForRoom(j, i).isVisited() ) {
+          System.out.print(searchForRoom(j, i) == activeRoom ? "|1|" : "|x|");
+        } else
+          System.out.print("| |");
+      }
+      System.out.println();
+    }
+  }
+
 
   private void goBack() {
     if (roomTracker.size() > (activeRoom.isStart() ? 1 : 0)) {
