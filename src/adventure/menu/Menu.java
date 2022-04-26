@@ -15,13 +15,14 @@ public class Menu {
 
   public static Scanner input = new Scanner(System.in);
 
+  // Default invalid input error message
   public static final String INPUT_INVALID = "Invalid entry, please try again.";
 
+  // String array, containing strings for different attack and hit outputs
   public static final String[] MELEE_ATTACK_LIST = {
       "%s swing%s at %s %s\n",
       "%s viciously attack%s %s %s\n"
   };
-
   public static final String[] HIT_LIST = {
       "and hit%s for %d damage.\n",
       "and gravely hit%s with a CRITICAL HIT for %d damage.\n"

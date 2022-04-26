@@ -3,12 +3,17 @@ package adventure.menu;
 import adventure.campaign.RandomDungeon;
 import adventure.player.PlayerCharacter;
 
-import java.util.HashMap;
-
+/**
+ * This Class contains the Main menu und is the starting point of the game. You can either start a
+ * new Game, read guides for the game or show the rankings (Work in Progress).
+ */
 public class MainMenu {
 
   private PlayerCharacter player;
 
+  /*
+   * String arrays containing options of the main menu and guides for printing to the console
+   */
   private final String[] MAIN_OPTIONS = {
       "Start Game",
       "Show Guide",
@@ -27,6 +32,9 @@ public class MainMenu {
       "Random Dungeon: The mystical Labyrinth of Zorian"
   };
 
+  /**
+   * Main method of the class. From here, user can start the game, open guides or look at the rankings
+   */
   public void mainMenu() {
     boolean shutdown = false;
     System.out.println("Welcome to Adventure.");
@@ -45,11 +53,17 @@ public class MainMenu {
 
   }
 
+  /**
+   * Starts the character creation tool and then promts the user to choose a campaign to play
+   */
   private void startGame() {
     player = CharacterCreation.createCharacter();
     chooseCampaign();
   }
 
+  /**
+   * Prints all campaigns to play and prompts user the choose a campaign
+   */
   private void chooseCampaign() {
     int campaign;
     boolean check = false;
@@ -71,11 +85,17 @@ public class MainMenu {
 
   }
 
+  /**
+   * Starts the default random dungeon campaign
+   */
   private void startRandomDungeon() {
     RandomDungeon randomDungeon = new RandomDungeon(player);
     randomDungeon.playRandomDungeon();
   }
 
+  /**
+   * This menu lets the user pick a guide to read
+   */
   private void guidesMenu() {
     boolean exit = false;
     do {
@@ -93,11 +113,18 @@ public class MainMenu {
 
   }
 
+  /**
+   * Prints the guide for the user to read. Return to the guide menu by pressing enter
+   * @param guideName contains name of the guide topic
+   */
   private void openGuide(String guideName) {
     TextReader.loadText(guideName + ".txt");
     Menu.pressEnter();
   }
 
+  /**
+   * Shows the rankings (Work in Progress)
+   */
   private void showRankings() {
 
   }
