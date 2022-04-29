@@ -99,6 +99,12 @@ public class Encounter {
     }
   }
 
+  /**
+   * This method generates an enemy of random type. It will be assigned a number on creation.
+   * @param number determines the number of the enemy
+   * @param level determines the level of the enemy
+   * @return an enemy of random type
+   */
   public Enemy generateRandomEnemy(int number, int level) {
     Enemy enemy;
     int enemyType = random.nextInt(4);

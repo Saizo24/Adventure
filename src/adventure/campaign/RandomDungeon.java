@@ -178,7 +178,9 @@ public class RandomDungeon extends Campaign {
     Menu.pressEnter();
   }
 
-<<<<<<< Updated upstream
+  /**
+   * This method prints the map for player, revealing only rooms he has visited. it also shows his current location
+   */
   private void showMap() {
     for (int i = 0; i < layout.length; i++) {
       for (int j = 0; j < layout[i].length; j++) {
@@ -189,15 +191,17 @@ public class RandomDungeon extends Campaign {
       }
       System.out.println();
     }
+    System.out.println("|1| - Current Room");
+    System.out.println("|x| - Room");
+    System.out.println("| | - Walls");
   }
 
 
-=======
+
   /**
    * This method lets the player return to his last visited room. You can't back out further than the starting
    * room of a level.
    */
->>>>>>> Stashed changes
   private void goBack() {
     if (roomTracker.size() > (activeRoom.isStart() ? 1 : 0)) {
       System.out.println("You go back to the last room.");

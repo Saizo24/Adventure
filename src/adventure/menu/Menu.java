@@ -4,7 +4,6 @@ import adventure.combat.Enemy;
 import adventure.interfaces.EquippableMainHand;
 import adventure.interfaces.EquippableOffHand;
 import adventure.player.PlayerCharacter;
-import adventure.scenery.Room;
 
 import java.util.ArrayList;
 import java.util.Arrays;

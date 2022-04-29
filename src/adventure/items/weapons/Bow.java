@@ -3,6 +3,9 @@ package adventure.items.weapons;
 import adventure.items.Quiver;
 import adventure.player.PlayerCharacter;
 
+/**
+ * This class describes a weapon the type Bow. 
+ */
 public class Bow extends Weapon {
   public static final String[] BOW_LIST = {
     "Shortbow",
