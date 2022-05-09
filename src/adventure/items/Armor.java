@@ -35,7 +35,7 @@ public class Armor implements UsableItem {
    * @param MAGIC_LEVEL determines the magic level of the armor
    */
   public Armor(int armorType, int index, int MAGIC_LEVEL) {
-    this.NAME = ARMOR_TYPES[armorType][index] + " Armor";
+    this.NAME = ARMOR_TYPES[armorType][index] + " Armor" + (MAGIC_LEVEL > 0 ? "+"+MAGIC_LEVEL : "");
     this.ARMOR_BONUS = armorType * 2 + index + 2;
     this.ARMOR_INDEX = armorType;
     this.MAGIC_LEVEL = MAGIC_LEVEL;

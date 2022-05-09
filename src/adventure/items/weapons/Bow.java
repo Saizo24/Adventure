@@ -4,7 +4,8 @@ import adventure.items.Quiver;
 import adventure.player.PlayerCharacter;
 
 /**
- * This class describes a weapon the type Bow. 
+ * This class describes a weapon the type Bow. The bow is a special kind of weapon, as it requires a quiver
+ * to attack.
  */
 public class Bow extends Weapon {
   public static final String[] BOW_LIST = {

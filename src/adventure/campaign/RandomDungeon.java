@@ -241,7 +241,7 @@ public class RandomDungeon extends Campaign {
     distributeTreasure(dungeon.size() / 3);
     setExitRoom();
     setStartingRoom();
-    Menu.printLayout(layout); // Only displays for test purposes, must be removed before game release
+    //Menu.printLayout(layout); // Only displays for test purposes, must be removed before game release
     currentLevel++;
   }
 
@@ -374,7 +374,7 @@ public class RandomDungeon extends Campaign {
   private void setStartingRoom() {
     setActiveRoom(startRoomNumber, 0);
     activeRoom.setStart(true);
-    System.out.println("Starting number: " + startRoomNumber);                      // only displays for test purpose, must be removed on game release
-    System.out.println("Starting room is " + activeRoom.X + ", " + activeRoom.Y);   // only displays for test purpose, must be removed on game release
+    //System.out.println("Starting number: " + startRoomNumber);                      // only displays for test purpose, must be removed on game release
+    //System.out.println("Starting room is " + activeRoom.X + ", " + activeRoom.Y);   // only displays for test purpose, must be removed on game release
   }
 }
