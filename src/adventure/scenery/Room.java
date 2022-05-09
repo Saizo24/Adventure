@@ -24,6 +24,7 @@ public class Room {
   public final int Y;
   private boolean isExit;
   private boolean isStart = false;
+  private boolean isVisited = false;
   private boolean isSearched = false;
 
   private Encounter encounter = null;
@@ -68,6 +69,10 @@ public class Room {
     isStart = start;
   }
 
+  public boolean isVisited() {
+    return isVisited;
+  }
+
   public boolean isSearched() {
     return isSearched;
   }
@@ -81,6 +86,7 @@ public class Room {
   }
 
   public void playRoom(PlayerCharacter player) {
+    isVisited = true;
     System.out.println("Room: " + ROOM_NUMBER);
     System.out.println(ROOM_DESCRIPTION);
     if (encounter != null && !encounter.playEncounter(player)) {

@@ -1,11 +1,8 @@
 package adventure.menu;
 
 import adventure.combat.Encounter;
-import adventure.combat.Enemy;
 import adventure.player.PlayerCharacter;
 import adventure.scenery.Room;
-
-import java.util.ArrayList;
 
 public class CombatMenu {
 

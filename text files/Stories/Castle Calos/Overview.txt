@@ -1,0 +1,14 @@
+Story Progression
+
+01.
+	Shout a warning to Reginold -> playEncounter("02.txt", 0) -> 03.
+	Dive flat on your face -> playEncounter("02.txt", 1) -> 03.
+	Hide. -> playEncounter("02.txt", 2) -> 03.
+	Stop and listen. -> regenerateHealth(-5);playEncounter("02.txt", 3) -> 0.3
+	
+
+02. Combat 1 text
+
+03.	
+	Cut the ears off. -> addGoldCoins(20); -> 04.
+
